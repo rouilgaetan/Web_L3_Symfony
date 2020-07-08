@@ -1,0 +1,27 @@
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+{% if user==null %}
+    <ul>
+        <li>{{ compteur }} produits enregistrés</li>
+        <li> <a href="{{ path("lic_projet_formconnection") }}" >Se connecter</a> </li>
+        <li> <a href="{{ path("lic_projet_formNewAccount") }}">créer un compte</a> </li>
+    </ul>
+{% elseif user.isadmin==false %}
+    <p> vous êtes l'utilisateur {{ user.identifiant }}</p>
+    <ul>
+        <li>{{ compteur }} produits enregistrés</li>
+        <li> <a href="{{ path("lic_projet_homepage") }}" onclick="alert('Déconnecté')">Se déconnecter</a> </li>
+        <li> <a href="{{ path("lic_projet_User_formEditAccount") }}">Modifier/Editer son profil</a> </li>
+        <li> <a href="{{ path("lic_projet_User_magasin") }}">Magasin</a> </li>
+        <li> <a href="{{ path("lic_projet_User_panier") }}">Panier</a> </li>
+        <li> <a href="{{ path("lic_projet_homepage") }}">page d'accueil</a> </li>
+    </ul>
+{% else %}
+    <p> vous êtes l'administrateur {{ user.identifiant }}</p>
+    <ul>
+        <li>{{ compteur }} produits enregistrés</li>
+        <li> <a href="{{ path("lic_projet_Admin_listeclients") }}"> Liste des clients </a> </li>
+        <li> <a href="{{ path("lic_projet_homepage") }}" onclick="alert('Déconnecté')">Se déconnecter</a> </li>
+        <li> <a href="{{ path("lic_projet_User_formEditAccount") }}">Modifier/Editer son profil</a> </li>
+        <li> <a href="https://fr.wikipedia.org/wiki/The_Truman_Show">The Truman Show</a> </li>
+    </ul>
+{% endif %}

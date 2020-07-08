@@ -1,0 +1,25 @@
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{ asset('layout1.css') }}" type="text/css" rel="stylesheet" >
+        <title>{% block maintitle %}{% endblock %}</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+    {{ render(controller("LicProjetBundle:Header:header")) }}
+    <h1>{% block title %}{% endblock %}</h1>
+        <div id="menu">
+            {% block menu %}
+            {% endblock %}
+        </div>
+        <div id="vue">
+            {% block body %}
+            {% endblock %}
+        </div>
+    <footer>
+        {{ include("LicProjetBundle::footer.html.twig") }}
+    </footer>
+    </body>
+</html>
+

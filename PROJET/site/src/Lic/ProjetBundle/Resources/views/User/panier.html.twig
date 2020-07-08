@@ -1,0 +1,38 @@
+{% extends "LicProjetBundle::layout1.html.twig" %}
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+{% block maintitle %}
+    Panier
+{% endblock %}
+
+{% block menu %}
+    {{ render(controller('LicProjetBundle:Menu:menu')) }}
+{% endblock %}
+
+{% block title %} Liste des articles dans votre panier : {%  endblock %}
+
+{% block body %}
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Id utilisateur</td>
+            <td>Id Produits</td>
+            <td>Quantité</td>
+        </tr>
+        {% for val in panier %}
+                <tr>
+                    <td>{{ val.id }}</td>
+                    <td>{{ val.client.id }}</td>
+                    <td>{{ val.produits.id }}</td>
+                    <td>{{ val.quantite_com }}</td>
+                    <td><a href="{{ path("lic_projet_User_supprarticle", {id : val.id}) }}">Supprimer</a></td>
+                </tr>
+        {% endfor %}
+        <tr>
+            <td><a href="{{ path("lic_projet_User_commander")}}">Commander</a></td>
+            <td><a href="{{ path("lic_projet_User_vider")}}">Vider</a></td>
+            <td>prix total : {{ prix }}</td>
+        </tr>
+
+    </table>
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends "LicProjetBundle::layout1.html.twig" %}
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+{% block maintitle %}
+    Magasin
+{% endblock %}
+
+{% block menu %}
+    {{ render(controller('LicProjetBundle:Menu:menu')) }}
+{% endblock %}
+
+{% block title %} Liste des articles : {%  endblock %}
+
+{% block body %}
+    <form method="post" action="{{ path("lic_projet_User_panier") }}">
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Libelle</td>
+                <td>Prix</td>
+                <td>En stock</td>
+            </tr>
+            {% for val in produits %}
+                    <tr>
+                        <td>{{ val.id }}</td>
+                        <td>{{ val.libelle }}</td>
+                        <td>{{ val.prix }}</td>
+                        <td>{{ val.quantite }}</td>
+                        <td>
+                            <SELECT name="{{ val.id }}" size="1">
+                                {% for i in 0..val.quantite %}
+                                <option value="{{ i }}"> {{ i }} </option>
+                                {% endfor %}
+                            </SELECT>
+                        </td>
+
+                    </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <div>
+                <input type="submit" value="Ajouter la sélection au panier">
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+

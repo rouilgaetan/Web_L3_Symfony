@@ -1,0 +1,31 @@
+lic_projet:
+    resource: "@LicProjetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+lic_sandbox:
+    resource: "@LicSandboxBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+lic_produit:
+    resource: "@LicProduitBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+lic_core:
+    resource: "@LicCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+
+
+
+
+
+
+
+

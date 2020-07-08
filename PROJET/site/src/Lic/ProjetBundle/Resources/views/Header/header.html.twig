@@ -1,0 +1,14 @@
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+{% if user==null %}
+    <div id="header">
+        <img src={{ asset('bandenoire.png') }} >
+    </div>
+{% elseif user.isadmin==false %}
+    <div id="headerUser">
+        <img src={{ asset('bandeverte.png') }} >
+    </div>
+{% else %}
+    <div id="headeradmin">
+        <img src={{ asset('banderouge.png') }} >
+    </div>
+{% endif %}

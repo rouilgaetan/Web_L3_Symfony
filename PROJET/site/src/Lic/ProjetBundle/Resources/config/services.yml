@@ -1,0 +1,7 @@
+services:
+    lic_projet.MyService:
+        class: Lic\ProjetBundle\Controller\MyService
+        arguments: [doctrine.orm.entity_manager]
+#    lic_projet.example:
+#        class: Lic\ProjetBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

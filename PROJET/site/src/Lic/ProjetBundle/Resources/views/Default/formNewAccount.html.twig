@@ -1,0 +1,39 @@
+{% extends "LicProjetBundle::layout1.html.twig" %}
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+{% block maintitle %}Création de compte{% endblock %}
+                {% block title %}
+                    Saisissez vos coordonées (vous n'en aurez pas besoin pour vous connecter)
+                {% endblock %}
+            {% block menu %}
+            {% endblock %}
+            {% block body %}
+                <form method="post" action="{{ path("lic_projet_testNewAccount") }}">
+                    <div>
+                        <label for="identifiant">Identifiant :</label>
+                        <input type="text" id="identifiant" name="user_identifiant" required>
+                    </div>
+                    <div>
+                        <label for="password">mot de passe :</label>
+                        <input type="password" id="password" name="user_password" required>
+                    </div>
+                    <div>
+                        <label for="name">nom :</label>
+                        <input type="text" id="name" name="user_name" required>
+                    </div>
+                    <div>
+                        <label for="firstname">prenom :</label>
+                        <input type="text" id="firstname" name="user_firstname" required>
+                    </div>
+                    <div>
+                        <label for="birthday">anniversaire :</label>
+                        <input type="text" size="2" maxlength="2" id="birthday" name="user_birthday_day" required>
+                        <label for="birthday"> - </label>
+                        <input type="text" size="2" maxlength="2" id="birthday" name="user_birthday_month" required>
+                        <label for="birthday"> - </label>
+                        <input type="text" size="4" maxlength="4" id="birthday" name="user_birthday_year" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="S'inscrire">
+                    </div>
+                </form>
+{% endblock %}

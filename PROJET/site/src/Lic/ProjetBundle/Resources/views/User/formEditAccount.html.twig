@@ -1,0 +1,35 @@
+{% extends "LicProjetBundle::layout1.html.twig" %}
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+{% block maintitle %}Création de compte{% endblock %}
+                {% block title %}
+                    Saisissez vos coordonées (vous n'en aurez pas besoin pour vous connecter)
+                {% endblock %}
+            {% block menu %}
+            {% endblock %}
+            {% block body %}
+                <form method="post" action="{{ path("lic_projet_testEditAccount") }}">
+                    <div>
+                        <label for="identifiant">Identifiant :</label>
+                        <input type="text" id="identifiant" value="{{ user.identifiant }}" name="user_identifiant">
+                    </div>
+                    <div>
+                        <label for="password">mot de passe :</label>
+                        <input type="password" id="password" value="{{ user.motdepasse }}" name="user_password">
+                    </div>
+                    <div>
+                        <label for="name">nom :</label>
+                        <input type="text" id="name" value="{{ user.nom }}" name="user_name">
+                    </div>
+                    <div>
+                        <label for="firstname">prenom :</label>
+                        <input type="text" id="firstname" value="{{ user.prenom }}" name="user_firstname">
+                    </div>
+                    <div>
+                        <label for="birthday">anniversaire :</label>
+                        <input type="text" value="{{ anniversaire }}" id="birthday" name="user_birthday">
+                    </div>
+                    <div>
+                        <input type="submit" value="S'inscrire">
+                    </div>
+                </form>
+{% endblock %}

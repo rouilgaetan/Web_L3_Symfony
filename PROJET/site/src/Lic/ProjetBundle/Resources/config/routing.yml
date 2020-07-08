@@ -1,0 +1,52 @@
+lic_projet_homepage:
+    path:     /Projet
+    defaults: { _controller: LicProjetBundle:Default:home }
+
+lic_projet_formconnection:
+    path:     /Projet/formconnection
+    defaults: { _controller: LicProjetBundle:Default:formconnection }
+
+lic_projet_formNewAccount:
+    path:     /Projet/formNewAccount
+    defaults: { _controller: LicProjetBundle:Default:formNewAccount }
+
+lic_projet_User_panier:
+    path:     /Projet/User/panier
+    defaults: { _controller: LicProjetBundle:User:panier }
+
+lic_projet_User_magasin:
+    path:     /Projet/User/magasin
+    defaults: { _controller: LicProjetBundle:User:magasin }
+
+lic_projet_Admin_listeclients:
+    path:     /Projet/Admin/listeclients
+    defaults: { _controller: LicProjetBundle:Admin:listeclients }
+
+lic_projet_Admin_supprclients:
+    path:     /Projet/Admin/delete/{id}
+    defaults: { _controller: LicProjetBundle:Admin:delete }
+
+lic_projet_testNewAccount:
+    path:     /Projet/Default/testNewAccount
+    defaults: { _controller: LicProjetBundle:Default:testNewAccount }
+
+lic_projet_User_formEditAccount:
+    path:     /Projet/User/formEditAccount
+    defaults: { _controller: LicProjetBundle:User:formEditAccount }
+
+lic_projet_testEditAccount:
+    path:     /Projet/Default/testEditAccount
+    defaults: { _controller: LicProjetBundle:User:testEditAccount }
+
+lic_projet_User_supprarticle:
+    path:     /Projet/User/delete/{id}
+    defaults: { _controller: LicProjetBundle:User:delete }
+
+lic_projet_User_commander:
+    path:     /Projet/User/commander
+    defaults: { _controller: LicProjetBundle:User:commander }
+
+lic_projet_User_vider:
+    path:     /Projet/User/vider
+    defaults: { _controller: LicProjetBundle:User:vider }
+

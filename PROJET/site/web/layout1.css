@@ -1,0 +1,11 @@
+html{
+    background-image: url("aigle.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}

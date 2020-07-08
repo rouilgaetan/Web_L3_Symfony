@@ -1,0 +1,36 @@
+{% extends "LicProjetBundle::layout1.html.twig" %}
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+
+{% block maintitle %}
+    Liste des clients
+{% endblock %}
+
+{% block menu %}
+    {{ render(controller('LicProjetBundle:Menu:menu')) }}
+{% endblock %}
+
+{% block title %} Liste des clients : {%  endblock %}
+
+
+{% block body %}
+
+    <table>
+        {% for val in user %}
+            {% if val.isadmin==false %}
+                <tr>
+                    <td>{{ val.id }}</td>
+                    <td>{{ val.identifiant }}</td>
+                    <td>{{ val.motdepasse }}</td>
+                    <td>{{ val.nom }}</td>
+                    <td>{{ val.prenom }}</td>
+                    <td>{{ val.anniversaire|date('d/m/Y') }}</td>
+                    <td>{{ val.created|date('d/m/Y') }}</td>
+                    <td>{{ val.modified|date('d/m/Y') }}</td>
+                    <td><a href="{{ path("lic_projet_Admin_supprclients", {id : val.id}) }}">Supprimer</a></td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+
+{% endblock %}

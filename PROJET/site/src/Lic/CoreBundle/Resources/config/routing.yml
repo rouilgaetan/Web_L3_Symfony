@@ -1,0 +1,10 @@
+lic_core_homepage:
+    path:     /
+    defaults: { _controller: LicCoreBundle:Default:index }
+
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: LicCoreBundle:Redirect:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]

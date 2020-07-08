@@ -1,0 +1,32 @@
+{% extends "LicProjetBundle::layout1.html.twig" %}
+{#Auteurs : ROUIL Gaëtan, RACAPE Tristan#}
+{% block maintitle %}
+    Connection
+{% endblock %}
+
+{% block menu %}
+    {{ render(controller('LicProjetBundle:Menu:menu')) }}
+{% endblock %}
+
+{% block title %} Saisissez vos identifiants: {%  endblock %}
+
+{% block body %}
+
+
+
+<form method="link" action="{{ path("lic_projet_homepage") }}">
+    <div>
+        <label for="name">Identifiant :</label>
+        <input type="text" id="name" name="user_name">
+    </div>
+    <div>
+        <label for="password">mot de passe :</label>
+        <input type="password" id="password" name="user_mail">
+    </div>
+    <div>
+        <input type="submit" value="Se connecter" onclick="alert('connecté')">
+    </div>
+ </form>
+
+{% endblock %}
+
